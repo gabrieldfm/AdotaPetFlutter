@@ -1,6 +1,9 @@
+import 'package:adotapet/pages/new.user.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
+  static String tag = 'login-page';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,8 +13,8 @@ class LoginPage extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             SizedBox(
-              width: 130,
-              height: 130,
+              width: 150,
+              height: 150,
               child: Image.asset("assets/logo.png"),
             ),
             SizedBox(
@@ -41,19 +44,6 @@ class LoginPage extends StatelessWidget {
                       fontSize: 20)),
               style: TextStyle(fontSize: 20),
             ),
-            Container(
-              height: 40,
-              alignment: Alignment.centerRight,
-              child: FlatButton(
-                child: Text(
-                  "Recuperar Senha",
-                  textAlign: TextAlign.right,
-                ),
-                onPressed: () {
-                  
-                },
-              ),
-            ),
             SizedBox(
               height: 40,
             ),
@@ -61,15 +51,7 @@ class LoginPage extends StatelessWidget {
               height: 60,
               alignment: Alignment.centerLeft,
               decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  stops: [0.3, 1],
-                  colors: [
-                    Color(0xFFF58524),
-                    Color(0XFFF92B7F),
-                  ],
-                ),
+                color: Colors.blueAccent,
                 borderRadius: BorderRadius.all(
                   Radius.circular(5),
                 ),
@@ -77,7 +59,7 @@ class LoginPage extends StatelessWidget {
               child: SizedBox.expand(
                 child: FlatButton(
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(
                         "Login",
@@ -88,13 +70,6 @@ class LoginPage extends StatelessWidget {
                         ),
                         textAlign: TextAlign.center,
                       ),
-                      /*Container(
-                        child: SizedBox(
-                          //child: Image.asset("assets/bone.png"),
-                          height: 28,
-                          width: 28,
-                        ),
-                      )*/
                     ],
                   ),
                   onPressed: () {
@@ -104,6 +79,40 @@ class LoginPage extends StatelessWidget {
                         //builder: (context) => HomePage(),
                       ),
                     );
+                  },
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+              height: 60,
+              alignment: Alignment.centerLeft,
+              decoration: BoxDecoration(
+                color: Colors.blueAccent,
+                borderRadius: BorderRadius.all(
+                  Radius.circular(5),
+                ),
+              ),
+              child: SizedBox.expand(
+                child: FlatButton(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        "Cadastrar",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 20,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).pushReplacementNamed(NewUserPage.tag);
                   },
                 ),
               ),

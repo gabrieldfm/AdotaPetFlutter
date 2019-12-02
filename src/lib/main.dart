@@ -1,13 +1,15 @@
 import 'package:adotapet/pages/login.dart';
+import 'package:adotapet/pages/new.user.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(AdotaPet());
 
 class AdotaPet extends StatelessWidget{
 
-  /*final routes = <String, WidgetBuilder>{
+  final routes = <String, WidgetBuilder>{
     LoginPage.tag: (context) => LoginPage(),
-  };*/
+    NewUserPage.tag: (context) => NewUserPage(),
+  };
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +27,7 @@ class AdotaPet extends StatelessWidget{
         )
       ),
       home: LoginPage(),
-      //routes: routes,
+      routes: routes,
     );
   }
 
